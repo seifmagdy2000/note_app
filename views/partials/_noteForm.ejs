@@ -1,0 +1,12 @@
+<form action="<%= formAction %>" method="post">
+    <!-- Title Field -->
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" value="<%= note ? note.title : '' %>" required><br><br>
+    
+    <!-- Note Field -->
+    <label for="note">Note:</label><br>
+    <textarea id="note" name="note" rows="30" maxlength="500" cols="90" required><%= note ? note.note : '' %></textarea><br><br>
+    
+    <!-- Submit Button -->
+    <input type="submit" value="<%= submitText %>">
+</form>

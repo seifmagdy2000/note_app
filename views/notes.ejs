@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1 class="title">Hello and welcome back</h1>
+    
+    <h3>you have ( <%= results.length %> ) notes</h3>
+    <% if(results.length!=0){  %>
+        <div class="notes-container">
+            <ul>
+                <% for(let i = 0 ; i < results.length ; i++) { %>
+                    <li>
+                        <p><%= results[i].title %></p>
+                        <p><%= results[i].note.substring(0, 70) %>
+                            <% if(results[i].note.length > 70) { %>
+                                <%= '...'  %>
+                                
+                                <% } %>
+                        <p class="timeStamp"><%= results[i].timeStamp  %></p>
+                            
+                        </p>
+                        <a href='/notes/<%=results[i].id %>' type="get">view more..</a>
+                        <button class="delete-button" data-id="<%= results[i].id %>">Delete</button>
+                    
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+        <% } %>
+    <a href="/notes/add" type="get" >Add a note</a>
+    <script src="../script.js"></script>
+</body>
+</html>

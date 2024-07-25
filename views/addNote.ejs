@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add a New Note</h1>
+    <form action="/notes" method="post">
+        <!-- Title Field -->
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+        
+        <!-- Note Field -->
+        <label for="note">Note:</label><br>
+        <textarea id="note" name="note" rows="30" maxlength="500" cols="90" required></textarea><br><br>
+        
+        <!-- Submit Button -->
+        <input type="submit" value="Add Note">
+    </form>
+</body>
+</html>
